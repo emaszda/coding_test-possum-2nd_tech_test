@@ -1,24 +1,9 @@
-# README
+# Task 1
+* Add author to Article (just a string will do)
+* When an article is edited, save the edit history.
+* Have a button which when clicked, shows all the edit histories.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Task 2
+* Do a soft delete on an Article or Comment
+* I want to view deleted Articles and Comments in the console
+* Make sure deleted Articles and Comments are not shown on the main website
