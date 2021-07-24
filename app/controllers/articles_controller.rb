@@ -26,8 +26,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    # TODO: Add Transaction Model for more safety
     @article = Article.find(params[:id])
-
+    @article_history = @article.article_histories.create(
+      title: @article.title,
+      body: @article.body,
+      author: @article.author,
+    )
     if @article.update(article_params)
       redirect_to @article
     else
