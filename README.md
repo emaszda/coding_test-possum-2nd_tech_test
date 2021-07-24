@@ -1,5 +1,5 @@
 # Task 1: Adding a new column to database
-* Add author to Article (just a string will do)
+* Add author to Article (just a string will do) [v]
 
 # Task 2: Version history
 * When an article is edited, save the edit history.

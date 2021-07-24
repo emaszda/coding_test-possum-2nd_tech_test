@@ -10,16 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_053117) do
+ActiveRecord::Schema.define(version: 2021_07_24_181346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_histories", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.string "title"
+    t.text "body"
+    t.string "author"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_article_histories_on_article_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "author"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,5 +42,6 @@ ActiveRecord::Schema.define(version: 2021_06_20_053117) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  add_foreign_key "article_histories", "articles"
   add_foreign_key "comments", "articles"
 end
