@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: technical_question_two_production
-  username: technical_question_two
-  password: <%= ENV['TECHNICAL_QUESTION_TWO_DATABASE_PASSWORD'] %>
+  # database: dco8ip64ifl6n2
+  # username: wvtrbxdddwfzjx
+  # password: <%= ENV['TECHNICAL_QUESTION_TWO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
