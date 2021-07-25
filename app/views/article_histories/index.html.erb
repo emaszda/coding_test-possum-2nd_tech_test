@@ -1,21 +1,21 @@
 <h1>ArticleHistories</h1>
-<%
-=begin%>
-  TODO: Make UI Better
-<%
-=end%>
 <table>
   <tr>
-    <th>Id</th>
+    <th></th>
     <th>Title</th>
     <th>Author</th>
     <th>Body</th>
     <th>Created At</th>
     <th>Updated At</th>
+    <th>Deleted</th>
+    <th>Action</th>
   </tr>
-  <% @article_histories.each do |article_history| %>
+  <%
+    i = 1 
+    @article_histories.each do |article_history|
+  %>
   <tr>
-    <td><%= article_history.id %></td>
+    <td><%= i %></td>
     <td><%= article_history.title %></td>
     <td><%= article_history.author %></td>
     <td><%=
@@ -27,6 +27,13 @@
     %></td>
     <td><%= article_history.created_at %></td>
     <td><%= article_history.updated_at %></td>
+    <td><%= article_history.is_deleted %></td>
+    <td><%= link_to "delete", article_article_history_path(id: article_history.id),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></td>
   </tr>
-  <% end %>
+  <% 
+  i += 1
+  end
+  %>
 </table>
