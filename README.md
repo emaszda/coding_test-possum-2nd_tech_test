@@ -6,9 +6,9 @@
 * Have a button which when clicked, shows all the edit histories. [v]
 
 # Task 3: Soft delete
-* Do a soft delete on an Article and Comment
+* Do a soft delete on an Article and Comment [v]
 * I want to view deleted Articles and Comments in the console
-* Make sure deleted Articles and Comments are not shown on the main website
+* Make sure deleted Articles and Comments are not shown on the main website [v]
 
 # Task 4: Deployment
 * Deploy your code to https://www.heroku.com
