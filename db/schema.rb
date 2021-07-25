@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_181346) do
+ActiveRecord::Schema.define(version: 2021_07_25_034219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2021_07_24_181346) do
     t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_deleted"
+    t.datetime "deleted_at"
     t.index ["article_id"], name: "index_article_histories_on_article_id"
   end
 
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_07_24_181346) do
     t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_deleted"
+    t.datetime "deleted_at"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
