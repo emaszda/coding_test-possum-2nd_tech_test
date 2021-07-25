@@ -1,0 +1,32 @@
+<h1>ArticleHistories</h1>
+<%
+=begin%>
+  TODO: Make UI Better
+<%
+=end%>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Body</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+  <% @article_histories.each do |article_history| %>
+  <tr>
+    <td><%= article_history.id %></td>
+    <td><%= article_history.title %></td>
+    <td><%= article_history.author %></td>
+    <td><%=
+      if article_history.body.length > 40
+        truncate(article_history.body, length: 40)
+      else
+        article_history.body
+      end 
+    %></td>
+    <td><%= article_history.created_at %></td>
+    <td><%= article_history.updated_at %></td>
+  </tr>
+  <% end %>
+</table>

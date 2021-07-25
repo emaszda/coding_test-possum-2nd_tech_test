@@ -2,8 +2,8 @@
 * Add author to Article (just a string will do) [v]
 
 # Task 2: Version history
-* When an article is edited, save the edit history.
-* Have a button which when clicked, shows all the edit histories.
+* When an article is edited, save the edit history. [v]
+* Have a button which when clicked, shows all the edit histories. [v]
 
 # Task 3: Soft delete
 * Do a soft delete on an Article and Comment
