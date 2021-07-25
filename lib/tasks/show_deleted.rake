@@ -1,14 +1,14 @@
 namespace :show_deleted do
-  desc "TODO"
+  desc "Show deleted comments..."
   task comments: :environment do
+    @comments = Comment.where(is_deleted: true)
+    puts JSON.pretty_generate(JSON.parse(@comments.to_json))   
   end
 
-  desc "TODO"
+  desc "Show deleted articles..."
   task articles: :environment do
-  end
-
-  desc "TODO"
-  task article_histories: :environment do
+    @articles = Article.where(is_deleted: true)
+    puts JSON.pretty_generate(JSON.parse(@articles.to_json))
   end
 
 end

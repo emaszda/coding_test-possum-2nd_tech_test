@@ -7,7 +7,7 @@
 
 # Task 3: Soft delete
 * Do a soft delete on an Article and Comment [v]
-* I want to view deleted Articles and Comments in the console
+* I want to view deleted Articles and Comments in the console [v]
 * Make sure deleted Articles and Comments are not shown on the main website [v]
 
 # Task 4: Deployment

@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.where(is_deleted: false)
   end
 
   def show
@@ -26,7 +26,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    # TODO: Add Transaction Model for more safety
     @article = Article.find(params[:id])
     @article_history = @article.article_histories.create(
       title: @article.title,
@@ -42,7 +41,9 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
+    @article.is_deleted = true
+    @article.deleted_at = Time.now
+    @article.save
 
     redirect_to root_path
   end
